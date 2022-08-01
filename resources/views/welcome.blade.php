@@ -36,5 +36,6 @@
                 </div>
             @endif
             hey
+            first laravel
     </body>
 </html>
