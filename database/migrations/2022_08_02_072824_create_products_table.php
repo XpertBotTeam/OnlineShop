@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('product_name');
             $table->string('product_price');
             $table->text('product_description');
+            $table->foreignId('brand_id');
             $table->string('product_image');
             $table->timestamps();
         });
