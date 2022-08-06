@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    protected $primaryKey = 'user_id';
     protected $guarded = [];
     public function order(){
         return $this->hasMany(Order::class,'user_id','user_id');
