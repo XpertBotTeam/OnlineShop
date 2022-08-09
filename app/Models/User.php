@@ -16,4 +16,20 @@ class User extends Authenticatable
     public function order(){
         return $this->hasMany(Order::class,'user_id','user_id');
     }
+    public function isAdmin(){
+        return $this->isAdmin;
+    }
+    public function analysis(){
+        return $this->hasOne(Analysis::class,'user_id','user_id');
+    }
+    public function updateAnalysis(){
+        $totalOrders = count($this->order()->get());
+            $this->analysis()->updateOrCreate(['totalOrders'=>$totalOrders,'favoriteCategory'=>"chicken"]);
+    }
+    public function analyseAll(){
+        $users = User::all();
+        foreach($users as $user ){
+            $user->updateAnalysis();
+        }
+    }
 }

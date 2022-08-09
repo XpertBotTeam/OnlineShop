@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +18,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', function () {
+    return view('welcome',[
+        'categories'=>Category::all()
+    ]);
+})->name('home');
 
 Auth::routes(['login']);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::post('checkLogin',[LoginController::class,'checkLogin']);
 Route::post('registerUser',[RegisterController::class,'create']);
 Route::get('logout',function(){
     auth()->logout();
-    return redirect('/'); 
+    return redirect('/home'); 
 });
+Route::get('/dashboard',[AdminController::class,'index'])->middleware('admin')->name('dashboard');

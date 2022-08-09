@@ -22,25 +22,27 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
     public function checkLogin(){
         $attributes = request()->validate([
             'email'=>'required|email',
             'password'=>'required'
         ]);
-        auth()->attempt($attributes);
+        if(Auth::attempt($attributes)){
+            $user = User::where('email',$attributes['email'])->first();
+            if($user->isAdmin()==true){
+                return redirect()->route('dashboard');
+            }
+            else return redirect()->route('home');
+        }
         return back()->withErrors([
-             'loginError'=>'Email or password not found !'
+            'loginError'=>'Email or password not found !'
         ]);
     }
 }

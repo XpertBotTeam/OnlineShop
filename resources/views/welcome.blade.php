@@ -39,9 +39,9 @@
                                   Categories
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
+                                @foreach ($categories as $category )
+                                    <a class="dropdown-item" href={{ "shop/".$category['category_name'] }}>{{ $category['category_name'] }}</a>
+                                @endforeach
                             </div>
                           </div>
                     </li>
