@@ -25,7 +25,7 @@
                 border-radius:40px;
             }
             
-        </style>
+            </style>
     </head>
     <body>
         <nav class="navbar navbar-expand  bg-primary p-2 gap-3 font-weight-bold h5">
@@ -62,12 +62,16 @@
                             <a href="login" class="nav-link text-white"><i class='fa fa-user'></i> Login</a>
                         @endauth
                     </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link text-white"><i class='fa fa-shopping-cart'></i> Cart</a>
+                    <li class="nav-item rounded">
+                        <a href="cart" class='nav-link text-white'>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            Cart
+                        </a>
                     </li>
-                </ul>
-            </div>
-          </nav>
+                    </ul>
+                </div>
+            </nav>
+
             <!-- JavaScript Bundle with Popper -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

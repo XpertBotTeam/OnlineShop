@@ -22,7 +22,7 @@
             <div class="form-outline mb-4">
                 <label class="form-label h5" for="form3Example3"></label>
                 <input name='name' type="text" id="name" class="form-control form-control-lg"
-                placeholder="Name" />
+                placeholder="Name" value ="{{ old('name') }}"/>
             </div>
             <!-- Email input -->
             @error('email')
@@ -31,7 +31,7 @@
             <div class="form-outline mb-4">
                 <label class="form-label h5" for="form3Example3"></label>
                 <input name='email' type="email" id="email" class="form-control form-control-lg"
-                placeholder="Email address" />
+                placeholder="Email address" value = "{{ old('email') }}"/>
             </div>
             
             <!-- Password input -->
@@ -42,12 +42,12 @@
             <div class="form-outline mb-3">
                 <label class="form-label h5" for="form3Example4"></label>
                 <input name='password' type="password" id="pass1" class="form-control form-control-lg"
-                placeholder="Password" />
+                placeholder="Password"/>
             </div>
             <div class="form-outline mb-3">
                 <label class="form-label h5" for="form3Example4"></label>
                 <input  type="password" id="pass2" class="form-control form-control-lg"
-                placeholder="Confirm passoword" />
+                placeholder="Confirm password"/>
             </div>
   
             <div class="d-flex justify-content-between align-items-center">

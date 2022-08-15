@@ -43,6 +43,6 @@ class LoginController extends Controller
         }
         return back()->withErrors([
             'loginError'=>'Email or password not found !'
-        ]);
+        ])->withInput();
     }
 }
