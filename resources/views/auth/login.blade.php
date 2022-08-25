@@ -1,8 +1,9 @@
 
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-</head>
+  </head>
 <!-- link to homePage -->
 <div style='width:100%;display:flex;justify-content:center;padding:1rem;'>
   <a href="/" style='align'>
@@ -35,7 +36,7 @@
                 <input name='password' type="password" id="form3Example4" class="form-control form-control-lg"
                 placeholder="Password" />
             </div>
-  
+            
             <div class="d-flex justify-content-between align-items-center">
               <!-- Checkbox -->
               <div class="form-check mb-0">
@@ -46,7 +47,19 @@
               </div>
               <a href="forgotPassword" class="text-body">Forgot password?</a>
             </div>
-  
+
+            <div class="form-outline d-flex align-items-center flex-column gap-1 mb-3 text-center">
+              <span><strong> Login with:</strong></span>
+              <div class='d-flex  justify-content-center'>
+                <a href="loginWithGoogle" class="btn border border-danger  p-2 bg-danger text-white text-center me-4" style='border-radius:50%;text-decoration:none'>
+                  <i class="fab fa-google" style='font-size:large'></i> 
+                </a>
+                <a href="loginWithGoogle" class="btn border border-primary p-2 bg-primary text-center text-white  me-4" style='border-radius:50%;text-decoration:none'>
+                  <i class="fab fa-facebook"style='font-size:large'></i> 
+                </a>
+              </div>
+            </div>
+
             <div class="text-center text-lg-start mt-4 pt-2">
               <button type="submit" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>

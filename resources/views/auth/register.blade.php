@@ -1,5 +1,6 @@
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 <!-- link to homePage -->
@@ -48,6 +49,18 @@
                 <label class="form-label h5" for="form3Example4"></label>
                 <input  type="password" id="pass2" class="form-control form-control-lg"
                 placeholder="Confirm password"/>
+            </div>
+            
+            <div class="form-outline d-flex align-items-center flex-column gap-1 mb-3 text-center">
+              <span><strong> Register with:</strong></span>
+              <div class='d-flex  justify-content-center'>
+                <a href="loginWithGoogle" class="btn border border-danger  p-2 bg-danger text-white text-center me-4" style='border-radius:50%;text-decoration:none'>
+                  <i class="fab fa-google" style='font-size:large'></i> 
+                </a>
+                <a href="loginWithGoogle" class="btn border border-primary p-2 bg-primary text-center text-white  me-4" style='border-radius:50%;text-decoration:none'>
+                  <i class="fab fa-facebook"style='font-size:large'></i> 
+                </a>
+              </div>
             </div>
   
             <div class="d-flex justify-content-between align-items-center">

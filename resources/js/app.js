@@ -15,10 +15,9 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-import testComponent from './components/testComponent.vue';
-app.component('example-component', ExampleComponent);
-app.component('test',testComponent)
+import exchangeComponent from './components/exchangeRate.vue';
+app.component('exchange-rate', exchangeComponent);
+
 
 /**
  * The following block of code may be used to automatically register your
