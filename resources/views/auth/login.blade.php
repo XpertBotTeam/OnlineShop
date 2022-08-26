@@ -54,7 +54,7 @@
                 <a href="loginWithGoogle" class="btn border border-danger  p-2 bg-danger text-white text-center me-4" style='border-radius:50%;text-decoration:none'>
                   <i class="fab fa-google" style='font-size:large'></i> 
                 </a>
-                <a href="loginWithGoogle" class="btn border border-primary p-2 bg-primary text-center text-white  me-4" style='border-radius:50%;text-decoration:none'>
+                <a href="loginWithFacebook" class="btn border border-primary p-2 bg-primary text-center text-white  me-4" style='border-radius:50%;text-decoration:none'>
                   <i class="fab fa-facebook"style='font-size:large'></i> 
                 </a>
               </div>
