@@ -9,11 +9,14 @@ class Category extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function product(){
+    public function products(){
         return $this->hasMany(Product::class,'category_id','category_id');
     }
     public function analysis(){
         return $this->hasOne(CatAnalyses::class,'category_id','category_id');
+    }
+    public function headCategory(){
+        $this->belongsTo(HeadCategory::class,'headCategory_id','headCategory_id');
     }
     public function updateAnalysis(){
         $products = $this->product()->with('order')->get();

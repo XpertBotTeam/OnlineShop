@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -22,6 +23,7 @@ class GoogleController extends Controller
             $userEmailExist = User::where('email',$googleUser->getEmail())->first();
             if($userEmailExist){
                 Auth::loginUsingId($userEmailExist->user_id);
+                session()->put('cart',[ ]);
                 return redirect()->route('home');
             }  
             else{

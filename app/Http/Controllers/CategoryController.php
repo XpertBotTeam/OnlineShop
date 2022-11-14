@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\HeadCategoryResource;
 use App\Models\CatAnalyses;
+use App\Models\HeadCategory;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,5 +17,11 @@ class CategoryController extends Controller
             $googleChartArray[++$key] = [$cat->category->category_name,(int)$cat->totalOrders];
         }
         return $googleChartArray;
+    }
+    public function homeCategories(){
+        return HeadCategoryResource::collection(HeadCategory::all());
+    }
+    public function index(){
+        return ;
     }
 }

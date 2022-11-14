@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -68,7 +67,7 @@
                         @endauth
                     </li>
                     <li class="nav-item rounded">
-                        <a href="cart" class='nav-link text-white'>
+                        <a href="/cart" class='nav-link text-white'>
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             Cart
                         </a>
@@ -76,19 +75,9 @@
                     </ul>
                 </div>
             </nav>
-            <div class="" id="app">
-                <!-- Exchange rate component --->
-                <header>
-                    <exchange-rate></exchange-rate>
-                </header>
-                <section class='w-100 d-flex justify-content-center'>
-                    <categories></categories>
-                </section>
-                <section class='w-100 d-flex justify-content-center'>
-                    <offers></offers>
-                </section>
+            <div id="app">
+                <cart></cart>
             </div>
-            <!-- JavaScript Bundle with Popper -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
             <script>
@@ -98,6 +87,5 @@
                     });
                 })
             </script>
-            
     </body>
 </html>

@@ -1,38 +1,26 @@
-
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        @vite('resources/js/app.js')
-        <title>Laravel</title>
-        @vite('resources/css/app.css')
-        <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js' type='javascript'></script>
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-                padding:0;
-                margin:0;
-                
-            }
-            a{
-                font-weight: bold;
-            }
-            li{
-                border-radius:40px;
-            }
-            .col-sm,.col{
-                border:1px solid black;
-            }
-            
-            </style>
-    </head>
+<html>
     <body>
+        <head>
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                @vite('resources/js/app.js')
+                <title>Laravel</title>
+                @vite('resources/css/app.css')
+                <!-- Fonts -->
+                <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+                <!-- CSS only -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js' type='javascript'></script>
+                <style>
+                    body {
+                        font-family: 'Nunito', sans-serif;
+                        padding:0;
+                        margin:0;  
+                    }
+                </style>
+        </head>
         <nav class="navbar navbar-expand  bg-primary p-2 gap-3 font-weight-bold h5">
             <a class="navbar-brand text-white" href="#">ONLINESHOP</a>
             <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
@@ -45,7 +33,7 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 @foreach ($categories as $category )
-                                    <a class="dropdown-item" href={{ "shop/".$category['name'] }}>{{ $category['name'] }}</a>
+                                    <a class="dropdown-item" href={{ "/shop/".$category['name'] }}>{{ $category['name'] }}</a>
                                 @endforeach
                             </div>
                           </div>
@@ -68,7 +56,7 @@
                         @endauth
                     </li>
                     <li class="nav-item rounded">
-                        <a href="cart" class='nav-link text-white'>
+                        <a href="/cart" class='nav-link text-white'>
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             Cart
                         </a>
@@ -76,19 +64,9 @@
                     </ul>
                 </div>
             </nav>
-            <div class="" id="app">
-                <!-- Exchange rate component --->
-                <header>
-                    <exchange-rate></exchange-rate>
-                </header>
-                <section class='w-100 d-flex justify-content-center'>
-                    <categories></categories>
-                </section>
-                <section class='w-100 d-flex justify-content-center'>
-                    <offers></offers>
-                </section>
+            <div id="app">
+                <app></app>
             </div>
-            <!-- JavaScript Bundle with Popper -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
             <script>
@@ -98,6 +76,5 @@
                     });
                 })
             </script>
-            
     </body>
 </html>

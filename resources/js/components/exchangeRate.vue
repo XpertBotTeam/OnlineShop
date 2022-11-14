@@ -42,7 +42,7 @@ import axios from 'axios';
     }
     .marquee{
         width:100%;
-        
+        margin-top:0; 
     }
     
 </style>

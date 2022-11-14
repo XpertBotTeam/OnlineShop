@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 use function PHPUnit\Framework\isEmpty;
 
 class LoginController extends Controller
@@ -39,7 +41,10 @@ class LoginController extends Controller
             if($user->isAdmin()==true){
                 return redirect()->route('dashboard');
             }
-            else return redirect()->route('home');
+            else {
+                session()->put('cart',[]);
+                return redirect()->route('home');
+            }
         }
         return back()->withErrors([
             'loginError'=>'Email or password not found !'

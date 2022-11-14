@@ -10,32 +10,35 @@ use Illuminate\Support\Facades\Auth;
 
 
 use App\Models\Category;
+use App\Models\HeadCategory;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 Route::get('/',function(){
     return view('welcome',[
-        'categories'=>Category::all()
+        'categories'=>HeadCategory::all()
     ]);
 });
 Route::get('home', function () {
     return view('welcome',[
-        'categories'=>Category::all()
+        'categories'=>HeadCategory::all()
     ]);
 })->name('home');
-
-Auth::routes(['login']);
-
+Route::get('shop',function(){
+    return view('shop',[
+        'categories'=>HeadCategory::all()
+    ]);
+})->name('shop');
+Route::get('shop/{category}',function(){
+    return view('shop',[
+        'categories'=>HeadCategory::all()
+    ]);
+});
+Route::get('cart',function(){
+    return view('cart',[
+        'categories'=>HeadCategory::all(),
+    ]);
+})->middleware('auth');
 Route::post('checkLogin',[LoginController::class,'checkLogin']);
 Route::post('registerUser',[RegisterController::class,'create']);
 Route::get('logout',function(){
@@ -51,3 +54,4 @@ Route::get('callbackFacebook',[FacebookController::class,'callBackFromFacebook']
 
 Route::get('/dashboard',[AdminController::class,'index'])->middleware('admin')->name('dashboard');
 
+Auth::routes(['login']);

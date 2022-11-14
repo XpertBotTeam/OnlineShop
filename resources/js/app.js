@@ -16,8 +16,19 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import exchangeComponent from './components/exchangeRate.vue';
+import categories from './components/categoriesGrid.vue';
+import offers from './components/offers.vue'
+import filters from './components/filters.vue'
+import products from './components/products.vue'
+import APP from './components/app.vue'
+import cart from './components/cart.vue'
 app.component('exchange-rate', exchangeComponent);
-
+app.component('categories',categories)
+app.component('offers',offers)
+app.component('filters',filters)
+app.component('products',products)
+app.component('cart',cart)
+app.component('app',APP)
 
 /**
  * The following block of code may be used to automatically register your
